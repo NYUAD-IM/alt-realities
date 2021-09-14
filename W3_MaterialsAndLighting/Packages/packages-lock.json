@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "ca.andydbc.unity-texture-packer": {
-      "version": "https://github.com/andydbc/unity-texture-packer.git#0.1.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "61de17f4dbb51a46aec89bc22e33db7b11b52bbf"
-    },
     "com.unity.collab-proxy": {
       "version": "1.7.1",
       "depth": 0,
