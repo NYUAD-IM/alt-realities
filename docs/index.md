@@ -8,7 +8,7 @@ Unity editor 2020.3.x [LTS]
 
 ### Hello Scripting
 
-![Hello Scripting Exercise](images/helloscriptingexercise.png)
+![Hello Scripting Exercise](https://media.githubusercontent.com/media/NYUAD-IM/alt-realities/main/docs/images/helloscriptingexercise.png)
 
 Basic scripting and physics in unity.  Rolling a ball around by applying forces and placing obstacles in the scene that can interact with the ball on contact via script.
 
@@ -18,7 +18,7 @@ In this exercise, students learn what game objects and components are as well as
 
 ### Bonsai Exercise
 
-![Bonsai Exercise](images/bonsaiexercise.png)
+![Bonsai Exercise](https://media.githubusercontent.com/media/NYUAD-IM/alt-realities/main/docs/images/bonsaiexercise.png)
 
 A miniture virtual bonsai garden introducing unity packages (Progrids, Probuilder and Polybrush), the asset store and the Universal Render Pipeline.
 
@@ -28,7 +28,7 @@ In this exercise, students learn how to setup a Unity project and create a simpl
 
 ### Materials and Lighting
 
-![Materials Exercise](images/materialsexercise.png)
+![Materials Exercise](https://media.githubusercontent.com/media/NYUAD-IM/alt-realities/main/docs/images/lightingexercise.png)
 
 [Materials Video](https://www.youtube.com/watch?v=fgG7FPq5wec)
 [Materials Exercise Assets](https://drive.google.com/file/d/1CIefkXmXN_zUPNXJ0LrfpF39ydRoNPJB/view?usp=sharing)
