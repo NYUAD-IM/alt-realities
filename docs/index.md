@@ -8,7 +8,7 @@ Unity editor 2020.3.x [LTS]
 
 ### Hello Scripting
 
-![Hello Scripting Exercise](./docs/images/helloscriptingexercise.png)
+![Hello Scripting Exercise](../images/helloscriptingexercise.png)
 
 Basic scripting and physics in unity.  Rolling a ball around by applying forces and placing obstacles in the scene that can interact with the ball on contact via script.
 
@@ -18,7 +18,7 @@ In this exercise, students learn what game objects and components are as well as
 
 ### Bonsai Exercise
 
-![Bonsai Exercise](./docs/images/bonsaiexercise.png)
+![Bonsai Exercise](../images/bonsaiexercise.png)
 
 A miniture virtual bonsai garden introducing unity packages (Progrids, Probuilder and Polybrush), the asset store and the Universal Render Pipeline.
 
@@ -28,14 +28,14 @@ In this exercise, students learn how to setup a Unity project and create a simpl
 
 ### Materials and Lighting
 
-![Materials Exercise](./docs/images/materialsexercise.png)
+![Materials Exercise](../images/materialsexercise.png)
 
 [Materials Video](https://www.youtube.com/watch?v=fgG7FPq5wec)
 [Materials Exercise Assets](https://drive.google.com/file/d/1CIefkXmXN_zUPNXJ0LrfpF39ydRoNPJB/view?usp=sharing)
 
 An outdoor scene with tileable PRB materials applied. 
 
-![Lighting Exercise](./docs/images/lightingexercise.png)
+![Lighting Exercise](../images/lightingexercise.png)
 
 [Lighting Video](https://www.youtube.com/watch?v=piIEHvklbzs&ab_channel=MichaelAllison)
 [Lighting Exercise Assets](https://drive.google.com/file/d/1ySHSGk-iNUiF9NS7915E1lwIGbW-Yq7X/view?usp=sharing)
@@ -46,7 +46,7 @@ In these exercises, the students learn about PBR texture sets and how to apply t
 
 ### Scripting Animations and Timeline
 
-![Animation Exercise](./docs/images/animationsexercise.png)
+![Animation Exercise](../images/animationsexercise.png)
 
 [Animation Exercise Assets](https://drive.google.com/file/d/1eJZE5nj6QR7ncpAeyMTSLAbs77C-qJaE/view?usp=sharing)
 
