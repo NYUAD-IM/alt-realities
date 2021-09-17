@@ -46,7 +46,7 @@ In these exercises, the students learn about PBR texture sets and how to apply t
 
 ### Scripting Animations and Timeline
 
-![Animation Exercise](images/animationsexercise.png)
+![Animation Exercise](https://media.githubusercontent.com/media/NYUAD-IM/alt-realities/main/docs/images/animationexercise.png)
 
 [Animation Exercise Assets](https://drive.google.com/file/d/1eJZE5nj6QR7ncpAeyMTSLAbs77C-qJaE/view?usp=sharing)
 
