@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 64783334}
   - component: {fileID: 64783333}
   m_Layer: 0
-  m_Name: SceneLoader
+  m_Name: SceneTransitionManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,9 +149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 64783332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30111d75c58f21b4aa396b000be00a2e, type: 3}
+  m_Script: {fileID: 11500000, guid: 341928d7a5866c840bfd95f1937c7c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionMaterial: {fileID: 2100000, guid: bb086e00bbfb9f943aaf4ed5e9d20899, type: 2}
+  transitionSpeed: 1
   initialScene: Lobby
 --- !u!4 &64783334
 Transform:
@@ -321,6 +323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
 --- !u!1001 &1090950024
@@ -330,6 +336,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710621316}
     m_Modifications:
+    - target: {fileID: 2580017360882301291, guid: 83e2ef3d7e4d4a842af78127fef80ccd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: daf4c9468470fa444b68649cc6b00109, type: 2}
     - target: {fileID: 7408909891044054986, guid: 83e2ef3d7e4d4a842af78127fef80ccd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -377,6 +387,10 @@ PrefabInstance:
     - target: {fileID: 7408909891044054987, guid: 83e2ef3d7e4d4a842af78127fef80ccd, type: 3}
       propertyPath: m_Name
       value: LeftHandVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971809101654032488, guid: 83e2ef3d7e4d4a842af78127fef80ccd, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83e2ef3d7e4d4a842af78127fef80ccd, type: 3}
@@ -677,7 +691,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e39b8e46a3e4f344bcc213f3407cc53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1334,6 +1348,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightHandVisual
       objectReference: {fileID: 0}
+    - target: {fileID: 964654370030448754, guid: 0930a11dfba18ba4a99b3d0b0654394e, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470853325313024480, guid: 0930a11dfba18ba4a99b3d0b0654394e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: daf4c9468470fa444b68649cc6b00109, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0930a11dfba18ba4a99b3d0b0654394e, type: 3}
 --- !u!4 &2070797762 stripped

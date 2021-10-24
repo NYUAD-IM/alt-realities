@@ -32,6 +32,6 @@ public static class SceneSelector
 
         var xr = EditorSceneManager.OpenScene("Assets/Scenes/XR.unity", OpenSceneMode.Single);
         var newScene = EditorSceneManager.OpenScene("Assets/Scenes/" + scene + ".unity", OpenSceneMode.Additive);
-        SceneLoader.PlaceXRRig(xr, newScene);
+        XRSceneTransitionManager.PlaceXRRig(xr, newScene);
     }
 }

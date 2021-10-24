@@ -3,15 +3,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class SceneLoader : MonoBehaviour
+[DisallowMultipleComponent]
+public class XRSceneTransitionManager : MonoBehaviour
 {
-    public static SceneLoader Instance;
+    public static XRSceneTransitionManager Instance;
 
+    public Material transitionMaterial;
+    public float transitionSpeed = 1.0f;
     public string initialScene;
     public bool isLoading { get; private set; } = false;
 
     Scene xrScene;
     Scene currentScene;
+    float currentFade = 0.0f;
 
     private void Awake()
     {
@@ -21,8 +25,9 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
+            Debug.LogWarning("Detected that singleton SceneTransitionManager has already been created. Deleting this instance.");
             //there can be only one!
-            Destroy(this);
+            Destroy(this.gameObject);
             return;
         }
 
@@ -56,9 +61,11 @@ public class SceneLoader : MonoBehaviour
     IEnumerator Load(string scene)
     {
         isLoading = true;
+        yield return StartCoroutine(Fade(1.0f));
         yield return StartCoroutine(UnloadCurrent());
 
         yield return StartCoroutine(LoadNewScene(scene));
+        yield return StartCoroutine(Fade(0.0f));
         isLoading = false;
     }
 
@@ -90,4 +97,16 @@ public class SceneLoader : MonoBehaviour
             xrRig.transform.rotation = xrRigOrigin.transform.rotation;
         }
     }
+
+    IEnumerator Fade(float dst)
+    {
+        while(!Mathf.Approximately(currentFade, dst))
+        {
+            currentFade = Mathf.MoveTowards(currentFade, dst, transitionSpeed * Time.deltaTime);
+            transitionMaterial.SetFloat("_FadeAmount", currentFade);
+            yield return null;
+        }
+        transitionMaterial.SetFloat("_FadeAmount", dst);
+    }
+
 }

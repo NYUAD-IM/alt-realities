@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneTransitionController : MonoBehaviour
+public class XRSceneTransitionController : MonoBehaviour
 {
     public string scene;
 
     public void TransitionScene()
     {
-        SceneLoader.Instance.TransitionTo(scene);
+        XRSceneTransitionManager.Instance.TransitionTo(scene);
     }
 }
