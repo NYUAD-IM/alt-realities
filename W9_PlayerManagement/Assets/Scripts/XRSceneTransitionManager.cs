@@ -89,19 +89,12 @@ public class XRSceneTransitionManager : MonoBehaviour
         GameObject[] newSceneObjects = newScene.GetRootGameObjects();
 
         GameObject xrRig = xrObjects.First((obj) => { return obj.CompareTag("XRRig"); });
-
-        GameObject sceneControllerObj = newSceneObjects.First((obj) => { return obj.CompareTag("SceneController"); });
-
-        XRSceneController controller = sceneControllerObj.GetComponent<XRSceneController>();
-
-        controller.Init();
-
-        Transform xrRigOrigin = controller.GetXRRigOrigin();
+        GameObject xrRigOrigin = newSceneObjects.First((obj) => { return obj.CompareTag("XRRigOrigin"); });
 
         if (xrRig && xrRigOrigin)
         {
-            xrRig.transform.position = xrRigOrigin.position;
-            xrRig.transform.rotation = xrRigOrigin.rotation;
+            xrRig.transform.position = xrRigOrigin.transform.position;
+            xrRig.transform.rotation = xrRigOrigin.transform.rotation;
         }
     }
 
@@ -116,8 +109,4 @@ public class XRSceneTransitionManager : MonoBehaviour
         transitionMaterial.SetFloat("_FadeAmount", dst);
     }
 
-    private void OnDestroy()
-    {
-        if(Instance == this) Instance = null;
-    }
 }
