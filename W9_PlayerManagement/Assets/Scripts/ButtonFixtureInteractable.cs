@@ -1,12 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 public class ButtonFixtureInteractable : XRBaseInteractable
 {
@@ -108,25 +103,4 @@ public class ButtonFixtureInteractable : XRBaseInteractable
         }
     }
 }
-
-#if UNITY_EDITOR
-public class ButtonFixtureInteractableGizmoDrawer
-{
-    [DrawGizmo(GizmoType.Selected | GizmoType.Active)]
-    static void DrawGizmoForMyScript(ButtonFixtureInteractable src, GizmoType gizmoType)
-    {
-        //Color current = Gizmos.color;
-
-        //Gizmos.color = Color.white;
-        //Matrix4x4 currentMat = Gizmos.matrix;
-
-        //Gizmos.matrix = src.plunger.localToWorldMatrix;
-        //Gizmos.DrawLine(src.plunger.localPosition, src.plunger.localPosition - new Vector3(0, src.depressionDepth, 0));
-
-        //Gizmos.matrix = currentMat;
-        //Gizmos.color = current;
-    }
-}
-
-#endif
 
