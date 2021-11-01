@@ -46,7 +46,7 @@ public class XRSceneTransitionManager : MonoBehaviour
         {
             SceneManager.SetActiveScene(newScene);
             currentScene = newScene;
-            PlaceXRRig(xrScene, currentScene);
+            ConfigureNewXRScene(xrScene, currentScene);
         }
     }
 
@@ -83,18 +83,26 @@ public class XRSceneTransitionManager : MonoBehaviour
             yield return null;
     }
 
-    public static void PlaceXRRig(Scene xrScene, Scene newScene)
+    public static void ConfigureNewXRScene(Scene xrScene, Scene newScene)
     {
         GameObject[] xrObjects = xrScene.GetRootGameObjects();
         GameObject[] newSceneObjects = newScene.GetRootGameObjects();
 
         GameObject xrRig = xrObjects.First((obj) => { return obj.CompareTag("XRRig"); });
-        GameObject xrRigOrigin = newSceneObjects.First((obj) => { return obj.CompareTag("XRRigOrigin"); });
+        GameObject sceneControllerObj = newSceneObjects.First((obj) => { return obj.CompareTag("XRSceneController"); });
 
-        if (xrRig && xrRigOrigin)
+        XRSceneController sceneController = sceneControllerObj.GetComponent<XRSceneController>();
+        if(sceneController)
         {
-            xrRig.transform.position = xrRigOrigin.transform.position;
-            xrRig.transform.rotation = xrRigOrigin.transform.rotation;
+            sceneController.Init();
+
+            Transform xrRigOrigin = sceneController.GetXRRigOrigin();
+
+            if (xrRig && xrRigOrigin)
+            {
+                xrRig.transform.position = xrRigOrigin.position;
+                xrRig.transform.rotation = xrRigOrigin.rotation;
+            }
         }
     }
 
@@ -109,4 +117,8 @@ public class XRSceneTransitionManager : MonoBehaviour
         transitionMaterial.SetFloat("_FadeAmount", dst);
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
+    }
 }

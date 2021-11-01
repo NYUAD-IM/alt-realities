@@ -6,6 +6,7 @@ TagManager:
   tags:
   - XRRigOrigin
   - XRRig
+  - XRSceneController
   layers:
   - Default
   - TransparentFX
