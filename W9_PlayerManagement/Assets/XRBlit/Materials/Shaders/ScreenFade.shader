@@ -8,13 +8,14 @@ Shader "XRBlit/ScreenFade"
 
     SubShader
     {
-        Tags { "RenderType" = "Opaque" "RenderPipeline" = "UniversalPipeline"}
+        Tags { "RenderType" = "Transparent+1" "RenderPipeline" = "UniversalPipeline"}
         LOD 100
         ZWrite Off Cull Off ZTest Always
+
         Pass
         {
             Name "ColorBlitPass"
-
+            Blend SrcAlpha OneMinusSrcAlpha
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -53,17 +54,13 @@ Shader "XRBlit/ScreenFade"
                 return output;
             }
 
-            TEXTURE2D_X(_CameraOpaqueTexture);
-            SAMPLER(sampler_CameraOpaqueTexture);
-
             float4 _FadeColor;
             float _FadeAmount;
 
             half4 frag(Varyings input) : SV_Target
             {
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input);
-                float4 color = SAMPLE_TEXTURE2D_X(_CameraOpaqueTexture, sampler_CameraOpaqueTexture, input.uv);
-                return lerp(color, _FadeColor, _FadeAmount);
+                return float4(_FadeColor.xyz, _FadeAmount);
             }
             ENDHLSL
         }
